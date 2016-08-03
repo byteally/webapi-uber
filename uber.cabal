@@ -1,6 +1,6 @@
 name:                uber
-version:             0.1.0.0
-synopsis:            Uber client for Haskell 
+version:             0.1.1.0
+synopsis:            Uber client for Haskell
 description:         Bindings for Uber API
 homepage:            https://github.com/byteally/webapi-uber.git
 license:             BSD3
@@ -26,10 +26,10 @@ library
                      , Uber.Types.RideRequest
                      , Uber.Types.Misc
                      , Uber.Types.Reminder
-  build-depends:       base >= 4.7 && < 5
-                     , aeson
-                     , text
-                     , webapi == 0.2.*
+  build-depends:       base  >= 4.7 && < 5
+                     , aeson >= 0.8 && < 0.12
+                     , text  >= 1.2 && < 1.3
+                     , webapi == 0.3.*
   default-language:    Haskell2010
 
 test-suite uber-test

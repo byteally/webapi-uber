@@ -38,7 +38,7 @@ data City = City
     , longitude :: Double
     } deriving (Show, Generic)
 
-instance ToParam HistoryParams 'QueryParam
+instance ToParam 'QueryParam HistoryParams
 instance FromJSON History where
 instance FromJSON City where
 instance FromJSON HistoryResp where

@@ -32,6 +32,6 @@ data PriceEstimate = PriceEstimate
     , distance         :: Double
     } deriving (Show, Generic)
 
-instance ToParam PriceEstimateParams 'QueryParam
+instance ToParam 'QueryParam PriceEstimateParams
 instance FromJSON PriceEstimates
 instance FromJSON PriceEstimate

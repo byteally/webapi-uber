@@ -14,7 +14,7 @@ import Uber.Types.Misc
 import Uber.Types.Reminder
 import WebApi
 
--- | Returns information about the Uber products offered at a given location 
+-- | Returns information about the Uber products offered at a given location
 getProducts :: Settings -> LatLng -> IO (Response GET ProductsR)
 getProducts settings ll = do
     client (addV1 $ toClientSettings settings) $
@@ -24,7 +24,7 @@ getProducts settings ll = do
 getProductDetails :: Settings -> ProductId -> IO (Response GET ProductDetailsR)
 getProductDetails settings (ProductId pid) = do
     client (addV1 $ toClientSettings settings) $
-        Request (ProdId $ Field pid) () () () (auth settings) () ()
+        Request (ProdId pid) () () () (auth settings) () ()
 
 -- | Returns an estimated price range for each product offered at a given location
 getPriceEstimate :: Settings -> PriceEstimateParams -> IO (Response GET PriceEstimateR)

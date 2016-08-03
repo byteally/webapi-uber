@@ -25,7 +25,7 @@ data TimeEstimate = TimeEstimate
     , t_estimate     :: Int
     } deriving (Show, Generic)
 
-instance ToParam TimeEstimateParams 'QueryParam
+instance ToParam 'QueryParam TimeEstimateParams
 instance FromJSON TimeEstimates where
 instance FromJSON TimeEstimate where
     parseJSON = genericParseJSON defaultOptions { fieldLabelModifier = drop 2 }

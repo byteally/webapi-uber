@@ -1,6 +1,7 @@
 {-# LANGUAGE DataKinds             #-}
 {-# LANGUAGE DeriveGeneric         #-}
 {-# LANGUAGE MultiParamTypeClasses #-}
+{-# LANGUAGE OverloadedStrings     #-}
 module Uber.Types.Product where
 
 import Data.Aeson
@@ -44,13 +45,13 @@ data AdditionalFee = AdditionalFee
     } deriving (Show, Generic)
 
 newtype ProdId = ProdId
-    { pid :: Field "product_id" Text
+    { pid :: Text
     } deriving (Generic)
 
 data ProductId = ProductId Text
 
-instance ToParam LatLng 'QueryParam
-instance ToParam ProdId 'PathParam
+instance ToParam 'QueryParam LatLng
+instance ToParam 'PathParam ProdId
 instance FromJSON Products
 instance FromJSON Product
 instance FromJSON PriceDetails
